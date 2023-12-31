@@ -1,24 +1,25 @@
-# README
+# *Everyday Rails Testing with RSpec* sample application (2024 Japanese edition)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample Rails application for *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec): A
+Practical Approach to Test-driven Development* by Aaron Sumner. This
+repository is the official fork for the 2024 Japanese edition.
 
-Things you may want to cover:
+----
 
-* Ruby version
+このリポジトリのRailsアプリは「 [Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp/) 」のサンプルアプリケーション（Rails 7.1対応版）です。
 
-* System dependencies
+2022年更新の日本語版より、 [原著のソースコード](https://github.com/everydayrails/everydayrails-rspec-2017) をフォークし、日本語版独自にメンテナンスしていくことになりました。
 
-* Configuration
+<img width="323" alt="cover image" src="https://user-images.githubusercontent.com/1148320/149681452-f3308367-831d-44dc-8c0b-cd9ba795cc6e.jpg">
 
-* Database creation
+このリポジトリでは既存のアプリケーションに対して、少しずつテストを追加していく過程を説明します。最初はまったくテストのないコードベースから始まり、
+モデルスペック、コントローラスペック、システムスペック、リクエストスペックと順に進みます。
 
-* Database initialization
+このリポジトリの各ブランチを開くと、各章で追加したコードが確認できます。詳しくは本書の第1章をご覧ください。
 
-* How to run the test suite
+Gitを使うとブランチ名を指定して各バージョンをチェックアウトできます。詳しくは本書をご覧ください。
 
-* Services (job queues, cache servers, search engines, etc.)
+Gitが苦手な方は、GitHubの便利な ブランチ機能を利用してください。
+フィルターで特定のブランチを選択し、オンラインでソースコードをブラウズすることができます。
 
-* Deployment instructions
-
-* ...
+Gitについてもっと詳しく知りたい方は、無料で公開されている「 [Git Immersion](http://gitimmersion.com/) 」または「 [Try Git](http://www.codeschool.com/courses/try-git) 」（いずれも英語版）がお勧めです。
