@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_project
   before_action :project_owner?
-  before_action :set_task, only: %i[ show edit update destroy ]
+  before_action :set_task, only: %i[ show edit update destroy toggle ]
 
   # GET /tasks/1 or /tasks/1.json
   def show
@@ -52,6 +52,10 @@ class TasksController < ApplicationController
       format.html { redirect_to @project, notice: "Task was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def toggle
+    @task.update(completed: !@task.completed)
   end
 
   private

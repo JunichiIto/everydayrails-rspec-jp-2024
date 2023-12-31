@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :notes, except: :show
-    resources :tasks, except: :index
+    resources :tasks, except: :index do
+      member do
+        patch :toggle
+      end
+    end
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

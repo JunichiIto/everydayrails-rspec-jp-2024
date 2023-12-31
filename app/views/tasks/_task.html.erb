@@ -1,6 +1,6 @@
 <tr class="task">
   <td>
-    <%= task.name %>
+    <%= render "tasks/completed", task: task %>
   </td>
   <td class="task-actions">
     <%= link_to edit_project_task_path(task.project, task),
