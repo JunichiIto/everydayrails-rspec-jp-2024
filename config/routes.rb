@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'projects/index'
+    get 'projects/show'
+    get 'projects/create'
+  end
   devise_for :users
 
   authenticated :user do
