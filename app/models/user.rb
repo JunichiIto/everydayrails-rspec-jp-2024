@@ -9,7 +9,15 @@ class User < ApplicationRecord
 
   has_many :projects, dependent: :destroy
 
+  after_create :send_welcome_email
+
   def name
     [first_name, last_name].join(" ")
+  end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver_later
   end
 end
