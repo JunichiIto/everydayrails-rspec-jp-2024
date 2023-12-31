@@ -11,22 +11,24 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="mb-3">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :due_on, style: "display: block" %>
-    <%= form.date_field :due_on %>
+  <div class="mb-3">
+    <%= form.label :due_on, class: "form-label" %>
+    <%= form.date_field :due_on, class: "form-control form-control-date" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+    <% cancel_path = (project.persisted? ? project_path(project) : projects_path) %>
+    <%= link_to "Cancel", cancel_path, class: "btn btn-light", data: { turbo_method: :get, turbo_confirm: "Are you sure?" } %>
   </div>
 <% end %>

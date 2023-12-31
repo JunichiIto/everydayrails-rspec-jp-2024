@@ -1,17 +1,17 @@
-<div id="<%= dom_id project %>">
-  <p>
-    <strong>Name:</strong>
-    <%= project.name %>
-  </p>
+<h1 class="heading">
+  <%= project.name %>
+  <%= link_to edit_project_path(project), class: "btn btn-light btn-sm btn-inline" do %>
+    <i class="bi bi-pencil-fill" aria-hidden="true"></i>
+    Edit
+  <% end %>
+</h1>
 
-  <p>
-    <strong>Description:</strong>
-    <%= project.description %>
-  </p>
-
-  <p>
-    <strong>Due on:</strong>
-    <%= project.due_on %>
-  </p>
-
+<div class="project-description">
+  <%= simple_format project.description %>
 </div>
+
+<p>
+  Due: <%= full_date(project.due_on) %>
+</p>
+
+<hr class="divider">
