@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :tasks
   devise_for :users
 
   authenticated :user do
@@ -8,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :notes, except: :show
+    resources :tasks, except: :index
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -1,17 +1,20 @@
-<div id="<%= dom_id task %>">
-  <p>
-    <strong>Name:</strong>
+<tr class="task">
+  <td>
     <%= task.name %>
-  </p>
-
-  <p>
-    <strong>Completed:</strong>
-    <%= task.completed %>
-  </p>
-
-  <p>
-    <strong>Project:</strong>
-    <%= task.project_id %>
-  </p>
-
-</div>
+  </td>
+  <td class="task-actions">
+    <%= link_to edit_project_task_path(task.project, task),
+                class: "btn btn-sm btn-light" do %>
+      <span class="bi bi-pencil-fill" aria-hidden="true"></span>
+      Edit
+    <% end %>
+    <%= button_to [task.project, task],
+                  method: :delete,
+                  data: { turbo_confirm: 'Are you sure?' },
+                  class: "btn btn-light btn-sm",
+                  form_class: "form-inline" do %>
+      <span class="bi bi-trash" aria-hidden="true"></span>
+      Delete
+    <% end %>
+  </td>
+</tr>
