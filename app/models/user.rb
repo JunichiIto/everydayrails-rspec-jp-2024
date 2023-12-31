@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_many :projects, dependent: :destroy
+  has_many :notes, dependent: :destroy
 
   after_create :send_welcome_email
 

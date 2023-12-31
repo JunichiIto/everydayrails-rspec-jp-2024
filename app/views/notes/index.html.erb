@@ -1,14 +1,5 @@
-<p style="color: green"><%= notice %></p>
+<h1>Search results for <%= params[:term] %></h1>
 
-<h1>Notes</h1>
+<%= render @notes %>
 
-<div id="notes">
-  <% @notes.each do |note| %>
-    <%= render note %>
-    <p>
-      <%= link_to "Show this note", note %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New note", new_note_path %>
+<%= link_to "Back to #{@project.name}", @project, class: "btn btn-primary" %>

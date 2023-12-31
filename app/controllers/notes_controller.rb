@@ -1,18 +1,16 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[ show edit update destroy ]
+  before_action :set_project
+  before_action :project_owner?
+  before_action :set_note, only: %i[ edit update destroy ]
 
   # GET /notes or /notes.json
   def index
-    @notes = Note.all
-  end
-
-  # GET /notes/1 or /notes/1.json
-  def show
+    @notes = @project.notes.search(params[:term])
   end
 
   # GET /notes/new
   def new
-    @note = Note.new
+    @note = @project.notes.new
   end
 
   # GET /notes/1/edit
@@ -21,11 +19,11 @@ class NotesController < ApplicationController
 
   # POST /notes or /notes.json
   def create
-    @note = Note.new(note_params)
+    @note = @project.notes.new(note_params.merge(user: current_user))
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to note_url(@note), notice: "Note was successfully created." }
+        format.html { redirect_to @project, notice: "Note was successfully created." }
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to note_url(@note), notice: "Note was successfully updated." }
+        format.html { redirect_to @project, notice: "Note was successfully updated." }
         format.json { render :show, status: :ok, location: @note }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +50,7 @@ class NotesController < ApplicationController
     @note.destroy!
 
     respond_to do |format|
-      format.html { redirect_to notes_url, notice: "Note was successfully destroyed." }
+      format.html { redirect_to @project, notice: "Note was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -65,6 +63,6 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:message, :project_id, :user_id)
+      params.require(:note).permit(:message, :attachment)
     end
 end
