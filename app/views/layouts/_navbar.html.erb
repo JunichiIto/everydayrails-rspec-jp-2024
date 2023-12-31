@@ -11,9 +11,12 @@
         </li>
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to "Sign In", '#', class: 'nav-link' %>
-        </li>
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.name, edit_user_registration_path, class: 'nav-link' %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: 'nav-link' %></li>
+        <% else %>
+          <li><%= link_to "Sign In", new_user_session_path, class: 'nav-link' %></li>
+        <% end %>
       </ul>
     </div>
   </div>
