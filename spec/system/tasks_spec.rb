@@ -15,6 +15,7 @@ RSpec.describe "Tasks", type: :system do
     click_button "Log in"
 
     click_link "RSpec tutorial"
+    expect(page).to have_css ".heading", text: "RSpec tutorial"
     check "Finish RSpec tutorial"
 
     expect(page).to have_css "label#task_#{task.id}.completed"
