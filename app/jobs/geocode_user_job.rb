@@ -1,7 +1,7 @@
 class GeocodeUserJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
-    # Do something later
+  def perform(user)
+    user.geocode
   end
 end

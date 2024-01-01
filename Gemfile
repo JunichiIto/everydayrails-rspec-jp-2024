@@ -68,3 +68,4 @@ end
 
 gem "devise"
 gem "activestorage-validator"
+gem "geocoder"
