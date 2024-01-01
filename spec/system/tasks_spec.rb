@@ -23,6 +23,7 @@ RSpec.describe "Tasks", type: :system do
   def go_to_project(name)
     visit root_path
     click_link name
+    expect(page).to have_css ".heading", text: name
   end
 
   def complete_task(name)
