@@ -58,6 +58,7 @@ group :development do
   # gem "spring"
 
   gem "letter_opener_web"
+  gem 'faker', require: false
 end
 
 group :test do
