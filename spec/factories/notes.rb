@@ -4,4 +4,8 @@ FactoryBot.define do
     association :project
     user { project.owner }
   end
+
+  trait :with_attachment do
+    attachment { Rack::Test::UploadedFile.new("#{Rails.root}/spec/files/attachment.jpg", 'image/jpeg') }
+  end
 end
