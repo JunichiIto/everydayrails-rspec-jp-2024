@@ -78,4 +78,5 @@ end
 
 gem "devise"
 gem "activestorage-validator"
-gem "geocoder"
+# Waiting for https://github.com/alexreisner/geocoder/issues/1642 is fixed
+gem "geocoder", github: "JunichiIto/geocoder", branch: "fix-ruby-3-3-warnings"
