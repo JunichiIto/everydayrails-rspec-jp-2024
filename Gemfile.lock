@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/JunichiIto/geocoder.git
+  revision: 7b90a51749261842ca43629dec09d7a8e26f5193
+  branch: fix-ruby-3-3-warnings
+  specs:
+    geocoder (1.8.2)
+      base64 (>= 0.1.0)
+      csv (>= 3.0.0)
+
+GIT
   remote: https://github.com/teamcapybara/capybara.git
   revision: 52eaecea6d154b7d664b0032cd1cbcad4788fe65
   specs:
@@ -105,6 +114,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
+    csv (3.2.8)
     date (3.3.4)
     debug (1.9.1)
       irb (~> 1.10)
@@ -127,7 +137,6 @@ GEM
     faker (3.2.2)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
-    geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashdiff (1.1.0)
@@ -335,7 +344,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
-  geocoder
+  geocoder!
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
