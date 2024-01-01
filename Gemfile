@@ -71,7 +71,7 @@ group :test do
   gem "selenium-webdriver"
 
   gem "launchy" # add in chapter 6
-  gem "shoulda-matchers"
+  gem "shoulda-matchers" # add in chapter 9
   gem "vcr"
   gem "webmock"
 end
