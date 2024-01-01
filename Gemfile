@@ -70,7 +70,7 @@ group :test do
   gem "capybara", github: "teamcapybara/capybara"
   gem "selenium-webdriver"
 
-  gem "launchy"
+  gem "launchy" # add in chapter 6
   gem "shoulda-matchers"
   gem "vcr"
   gem "webmock"
