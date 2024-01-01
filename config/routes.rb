@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  namespace :api do
-    get 'projects/index'
-    get 'projects/show'
-    get 'projects/create'
-  end
   devise_for :users
 
   authenticated :user do
@@ -17,6 +12,10 @@ Rails.application.routes.draw do
         patch :toggle
       end
     end
+  end
+
+  namespace :api do
+    resources :projects, only: %i[index show create]
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
