@@ -1,3 +1,5 @@
+[![RSpec](https://github.com/JunichiIto/everydayrails-rspec-jp-2024/actions/workflows/rspec.yml/badge.svg)](https://github.com/JunichiIto/everydayrails-rspec-jp-2024/actions/workflows/rspec.yml)
+
 # *Everyday Rails Testing with RSpec* sample application (2024 Japanese edition)
 
 Sample Rails application for *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec): A

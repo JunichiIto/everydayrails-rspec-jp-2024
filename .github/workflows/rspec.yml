@@ -1,0 +1,35 @@
+name: RSpec
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['3.0', '3.1', '3.2', '3.3']
+    env:
+      RUBYOPT: "-W:deprecated"
+      DISABLE_BOOTSNAP: 1
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Setup test database
+        run: bin/rails db:schema:load
+
+      - name: Compile assets
+        run: bin/rails assets:precompile
+
+      - name: Run tests
+        run: bundle exec rspec
