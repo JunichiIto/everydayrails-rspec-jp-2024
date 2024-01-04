@@ -1,7 +1,6 @@
 GIT
-  remote: https://github.com/JunichiIto/geocoder.git
-  revision: 7b90a51749261842ca43629dec09d7a8e26f5193
-  branch: fix-ruby-3-3-warnings
+  remote: https://github.com/alexreisner/geocoder.git
+  revision: 82d85313598354d6324c676748d4692ef84c75db
   specs:
     geocoder (1.8.2)
       base64 (>= 0.1.0)
