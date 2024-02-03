@@ -65,9 +65,7 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  # Waiting for https://github.com/teamcapybara/capybara/pull/2706 to be released
-  gem "capybara", github: "teamcapybara/capybara"
+  gem "capybara"
   gem "selenium-webdriver"
 
   gem "launchy"

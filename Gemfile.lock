@@ -6,20 +6,6 @@ GIT
       base64 (>= 0.1.0)
       csv (>= 3.0.0)
 
-GIT
-  remote: https://github.com/teamcapybara/capybara.git
-  revision: 52eaecea6d154b7d664b0032cd1cbcad4788fe65
-  specs:
-    capybara (3.40.0)
-      addressable
-      matrix
-      mini_mime (>= 0.1.3)
-      nokogiri (~> 1.11)
-      rack (>= 1.6.0)
-      rack-test (>= 0.6.3)
-      regexp_parser (>= 1.5, < 3.0)
-      xpath (~> 3.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -108,6 +94,15 @@ GEM
     bootsnap (1.17.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    capybara (3.40.0)
+      addressable
+      matrix
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.11)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (>= 1.5, < 3.0)
+      xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crack (0.4.5)
@@ -208,7 +203,7 @@ GEM
     puma (6.4.0)
       nio4r (~> 2.0)
     racc (1.7.3)
-    rack (3.0.8)
+    rack (3.0.9)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -248,7 +243,7 @@ GEM
     rake (13.1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
-    regexp_parser (2.8.3)
+    regexp_parser (2.9.0)
     reline (0.4.1)
       io-console (~> 0.5)
     responders (3.1.1)
@@ -338,7 +333,7 @@ PLATFORMS
 DEPENDENCIES
   activestorage-validator
   bootsnap
-  capybara!
+  capybara
   debug
   devise
   factory_bot_rails
