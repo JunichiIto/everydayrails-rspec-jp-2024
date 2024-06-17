@@ -55,4 +55,10 @@ RSpec.describe Project, type: :model do
     project = FactoryBot.create(:project, :with_notes)
     expect(project.notes.length).to eq 5
   end
+
+  # たくさんのメモが付いていること
+  it "can have many tasks" do
+    project = FactoryBot.create(:project, :with_tasks)
+    expect(project.tasks.length).to eq 5
+  end
 end

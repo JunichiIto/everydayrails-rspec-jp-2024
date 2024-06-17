@@ -9,6 +9,10 @@ FactoryBot.define do
       after(:create) { |project| create_list(:note, 5, project: project) }
     end
 
+    trait :with_tasks do
+      after(:create) { |project| create_list(:task, 5, project: project) }
+    end
+
     trait :due_yesterday do
       due_on { 1.day.ago }
     end
